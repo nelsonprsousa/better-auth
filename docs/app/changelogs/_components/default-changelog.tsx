@@ -223,7 +223,6 @@ export async function generateMetadata({
 	const url = new URL(`${baseUrl}/api/og-release`);
 	const title = "Changelogs";
 	const description = `All of the changes made will be available here.`;
-
 	url.searchParams.set("type", "Version Release");
 	url.searchParams.set("mode", "dark");
 	url.searchParams.set("heading", `Changelogs`);
