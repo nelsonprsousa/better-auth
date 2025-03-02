@@ -394,17 +394,21 @@ If the user has the necessary permissions (by default: role is owner) in the spe
 You can configure how organization deletion is handled through `organizationDeletion` option:
 
 ```ts
-const auth = betterAuth({
-  organizationDeletion: {
-    disabled: true, //to disable it altogether
-    beforeDelete: async(data, request)=>{
-      // a callback to run before deleting org
-    },
-    afterDelete: async(data, request)=>{
-      // a callback to run after deleting org
-    }
-  }
-})
+const auth2 = betterAuth({
+  plugins: [
+    organization({
+      organizationDeletion: {
+        disabled: true, //to disable it altogether
+        beforeDelete: async (data, request) => {
+          // a callback to run before deleting org
+        },
+        afterDelete: async (data, request) => {
+          // a callback to run after deleting org
+        },
+      },
+    }),
+  ],
+});
 ```
 
 ## Invitations
